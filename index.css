@@ -7,7 +7,9 @@
     background-color: #2196F3;
     padding: 5px;
 }
-
+body{
+    margin: 0%;
+}
 .grid-container > div {
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
@@ -19,11 +21,12 @@
     grid-area: header;
     height: 50px;
     text-align: center;
+    padding-bottom: 10%;
 }  
 
 .navigation_bar{
     grid-area: navigation_bar;
-    height: 380px;
+    height: 411px;
 }
 
 
@@ -59,7 +62,7 @@ li > a:hover:not(.active) {
 
 .main{
     grid-area: main;
-    height: 380px;
+    height: 411px;
 }
 
 .footer{
