@@ -12,26 +12,59 @@
         <div class="header">
             <div class="header_content">
                     <p>ToDo List</p>
-
             </div>
         </div>
         <div class="navigation_bar">
             <ul>
-                <li><a class="active" href="#todo">ToDo</a></li>
-                <li><a href="#user">User</a></li>
-                <li><a href="#login">Login</a></li>
+                <li><a href="#todo" onclick="GetContent('todo_content');">ToDo</a></li>
+                <li><a href="#user"onclick="GetContent('user_content');">User</a></li>
+                <li><a href="#login" onclick="GetContent('login_content');">Login</a></li>
             </ul>
         </div>
         <div class="main">
-            <div class=""></div>
+                <div class="content_type" id="todo_content" style="display:none">
+                    <p>A list</p>        
+                </div>
+                <div class="content_type" id="user_content" style="display:none">
+                        <p>A user</p>        
+                </div>
+                <div class="content_type" id="login_content">
+                        <p>Login Page</p>
+                        <form>
+                                Username : <input id="username" type="text"/><br/>
+                                Password : <input id="password" type="password"><br/>
+                                <input type="submit" onclick="SubmitData();">
+                        </form>        
+                </div>
         </div>      
         <div class="footer">
             <ul>
-                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
         </div>
       </div>
+
+<script>
+    function GetContent(content) {
+    var i = 0;
+    var x = document.getElementsByClassName("content_type");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+    }
+    document.getElementById(content).style.display = "block";  
+    }
+
+    function SubmitData(){
+        var user = document.getElementById("username");
+        var password = document.getElementById("password");
+
+        if(user == "admin" && password == "admin"){
+            document.getElementById("todo_content").style.display = "block";
+        }
+    }
+</script>
+
 </body>
 </html>
