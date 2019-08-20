@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ToDo</title>
     <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="myscript.js"></script>
 </head>
 <body>
     <div class="grid-container">
@@ -22,8 +23,13 @@
             </ul>
         </div>
         <div class="main">
-                <div class="content_type" id="todo_content" style="display:none">
-                    <p>A list</p>        
+                <div class="content_type" id="todo_content" style="display:none">                    
+                    <input type="text" id="task"/>
+                    <button onclick="AddTask();">Add Task</button>
+                    <button onclick="SearchTask();">Search</button>
+                    <ol id ="todo_list">
+                        <li class="item">Buy milk</li>
+                    </ol>       
                 </div>
                 <div class="content_type" id="user_content" style="display:none">
                         <p>A user</p>        
@@ -32,8 +38,8 @@
                         <p>Login Page</p>
                         <form>
                                 Username : <input id="username" type="text"/><br/>
-                                Password : <input id="password" type="password"><br/>
-                                <input type="submit" onclick="SubmitData();">
+                                Password : <input id="password" type="password"/><br/>
+                                <input type="submit" onclick="SubmitData();"/>
                         </form>        
                 </div>
         </div>      
@@ -60,9 +66,33 @@
         var user = document.getElementById("username");
         var password = document.getElementById("password");
 
-        if(user == "admin" && password == "admin"){
-            document.getElementById("todo_content").style.display = "block";
+        if(user.value == "admin" && password.value == "admin"){
+            window.alert("Login Successful");
         }
+    }
+    function AddTask(){
+        var ol = document.getElementById("todo_list");
+        var task = document.getElementById("task");
+
+        if(task.value == null || task.value == ""){
+            return;
+        }
+
+        var list_of_tasks = [];
+        list_of_tasks = document.getElementsByClassName("item");
+
+        if(list_of_tasks.indexOf(task.value) < 0){
+            return;
+        }
+
+
+        var li = document.createElement("li");
+        li.setAttribute('class','item');
+        li.appendChild(document.createTextNode(task.value));
+        ol.appendChild(li);
+    }
+    function SearchTask(){
+
     }
 </script>
 
