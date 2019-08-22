@@ -28,7 +28,11 @@
                     <button onclick="AddTask();">Add Task</button>
                     <button onclick="SearchTask();">Search</button>
                     <ol id ="todo_list">
-                        <li class="item">Buy milk</li>
+                        <li class="item">
+                            Buy milk
+                            <input type="button" value="edit" onclick="EditItem();"> 
+                            <input type="button" value="remove" onclick="RemoveItem(event);"> 
+                        </li>
                     </ol>       
                 </div>
                 <div class="content_type" id="user_content" style="display:none">

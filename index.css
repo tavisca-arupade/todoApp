@@ -65,9 +65,13 @@ li > a:hover{
     color: #000;
 }
 
+#login_content{
+    text-align: center;
+}
+
 .footer{
     grid-area: footer;
-    height: 10vh;
+    height: 9.65vh;
     font-size: 25px;       
     color: #f1f1f1;
     background-color: #000;
@@ -76,4 +80,8 @@ li > a:hover{
 .footer > ul > li{
     float: left;
     background-color : none;
+}
+
+#todo_content{
+    padding: 2% 2%;
 }
