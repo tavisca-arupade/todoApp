@@ -42,13 +42,13 @@ function AddTask(){
     var edit = document.createElement("input");
     edit.type = "button"
     edit.value = "edit";
-    edit.onclick = "EditItem()";
+    edit.addEventListener("click",function(){EditItem(event);});
     edit.className = "edit";
     li.appendChild(edit);
     var remove = document.createElement("input");
     remove.type = "button";
     remove.value = "remove";
-    remove.addEventListener("click",RemoveItem);
+    remove.addEventListener("click",function(){RemoveItem(event);});
     remove.className = "remove";
     li.appendChild(remove);
     li.className = "item";
@@ -70,14 +70,12 @@ function SearchTask(){
 
 function RemoveItem(event){
     var ol = document.getElementById("todo_list");
-    //var li = document.getElementsByClassName("item").onclick = function() {
-        var li = target
-        ol.removeChild();
-    //};    
+    ol.removeChild(event.currentTarget.parentElement);
 }
+ 
 
-function EditItem(){
-    var li = document.getElementsByClassName("item").onclick = function() {
-        li.value = window.prompt("Enter value");
-    };
+function EditItem(event){
+    var li = event.currentTarget.parentElement;
+    var newValue = prompt("Enter task");
+    li.innerHTML = newValue + "<input type='button' value='edit' onclick='EditItem(event);'><input type='button' value='remove' onclick='RemoveItem(event);'>";
 }
