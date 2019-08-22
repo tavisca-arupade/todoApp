@@ -1,29 +1,37 @@
 .grid-container{
     display: grid;
-    grid-template-areas: 'header header header header'
+    grid-template-areas: 
+    'header header header header'
     'navigation_bar main main main'
-    'footer footer footer footer';
-    grid-gap: 5px;         
-    background-color: #2196F3;
-    padding: 5px;
+    'navigation_bar main main main'
+    'footer footer footer footer';        
+    background-color: #000;
+    grid-gap: 1px;
 }
-
-.grid-container > div {
-    background-color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding: 20px 20px;
-    font-size: 25px;
-} 
+body{
+    margin: 0% 0%;
+}
 
 .header{
     grid-area: header;
-    height: 50px;
+    height: 10vh;
+    font-size: 25px;
+    color: #f1f1f1;
     text-align: center;
+    background-color: #000;
 }  
 
 .navigation_bar{
     grid-area: navigation_bar;
-    height: 380px;
+    height: 80vh;
+    font-size: 25px;
+    color: #000;
+    background-color: #f1f1f1;
+}
+
+.navigation_bar > ul > li{
+    background-color : #2196F3;
+    border: #000;
 }
 
 
@@ -33,40 +41,47 @@ ul {
     padding: 0;
     width: 100%;
     background-color: #f1f1f1;
+    cursor: pointer;
     
 }
 
-.navigation_bar > ul{
-    overflow: auto;
-}
-
 li > a {
-    display: block;
-    color: #000;
+    display: block; 
     padding: 8px 16px;
+    text-align: center;
     text-decoration: none;
-}
-
-li > a.active {
-    background-color: #2196F3;
     color: white;
 }
 
-li > a:hover:not(.active) {
-    background-color: #555;
-    color: white;
+li > a:hover{
+    background-color: dimgray;
 }
 
 .main{
     grid-area: main;
-    height: 380px;
+    height: 80vh;
+    background-color: #f1f1f1;
+    font-size: 25px;
+    color: #000;
+}
+
+#login_content{
+    text-align: center;
 }
 
 .footer{
     grid-area: footer;
-    height: 50px;
+    height: 9.65vh;
+    font-size: 25px;       
+    color: #f1f1f1;
+    background-color: #000;
 }
 
 .footer > ul > li{
     float: left;
+    background-color : none;
+}
+
+#todo_content{
+    padding: 2% 2%;
 }
